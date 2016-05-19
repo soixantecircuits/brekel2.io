@@ -3,9 +3,11 @@
 var net = require('net')
 let config = {
   port: 8885,
-  address: '192.168.1.242'
+  address: '192.168.1.242',
+  ioPort: 3333
 }
 var client = new net.Socket()
+var io = require('socket.io')(config.ioPort)
 var data = ''
 var buffer = new Buffer(0, 'hex')
 var Struct = require('struct').Struct
